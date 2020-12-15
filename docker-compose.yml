@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  template:
+    build:
+      context: ./apps/_template
+      dockerfile: Dockerfile
+      args:
+        - GOOGLE_ANALYTICS_ID=
+    ports:
+      - 3000:3000
