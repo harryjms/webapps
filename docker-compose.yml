@@ -8,9 +8,11 @@ services:
       - 80:80
     depends_on:
       - harryjmsuk
+    restart: always
   harryjmsuk:
     build:
       context: ./apps/harryjmsuk
       dockerfile: Dockerfile
       args:
         - GOOGLE_ANALYTICS_ID=G-T33NZK85BY
+      restart: always
