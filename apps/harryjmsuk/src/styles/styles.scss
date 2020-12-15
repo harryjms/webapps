@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap");
+
+body {
+  font-family: "Work Sans", sans-serif;
+  a {
+    margin-right: 8px;
+    color: rgb(0, 122, 255);
+    text-decoration: none;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: " ";
+      bottom: -1px;
+      left: 50%;
+      right: 50%;
+      height: 2px;
+      background-color: currentColor;
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+    }
+
+    &:hover {
+      &:after {
+        left: 0;
+        right: 0;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
