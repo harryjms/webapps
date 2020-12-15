@@ -11,7 +11,7 @@ const Homepage = () => {
         Software Engineer, specialising in front-end development, at the BBC.
       </p>
       <p>
-        <i>More coming soon</i> ✨
+        <i>More content coming soon</i> ✨
       </p>
       <a href="https://github.com/harryjms" target="_blank">
         Github
