@@ -15,4 +15,4 @@ services:
       dockerfile: Dockerfile
       args:
         - GOOGLE_ANALYTICS_ID=G-T33NZK85BY
-      restart: always
+    restart: always
