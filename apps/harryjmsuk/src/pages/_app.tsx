@@ -2,8 +2,8 @@ import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useEffect } from "react";
-import "../styles/styles.scss";
 import { initGA, logPageView } from "../utils/analytics";
+import "../styles/styles.scss";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
