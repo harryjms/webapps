@@ -1,7 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
 
 body {
   font-family: "Work Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+
   a {
     margin-right: 8px;
     color: rgb(0, 122, 255);
@@ -26,10 +42,29 @@ body {
         opacity: 1;
       }
     }
+    &.cta {
+      padding: 8px;
+      background-color: rgb(0, 122, 255);
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: rgb(0, 102, 255);
+      }
+    }
   }
 }
 
 .content {
   max-width: 900px;
   margin: 0 auto;
+}
+
+.code-style,
+code {
+  font-family: "PT Mono", monospace;
+}
+
+p {
+  line-height: 1.5em;
 }

@@ -24,6 +24,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Component {...pageProps} />
+      <footer className="content">
+        <small>&copy; 2020</small>
+      </footer>
     </div>
   );
 };

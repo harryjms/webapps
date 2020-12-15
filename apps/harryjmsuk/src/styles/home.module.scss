@@ -1,0 +1,45 @@
+.section {
+  margin-top: 50px;
+
+  .tuckshop {
+    background-color: #e61c67;
+    padding: 30px;
+    color: white;
+
+    a {
+      color: currentColor;
+      text-decoration: underline;
+
+      &.cta-white {
+        background-color: white;
+        color: #e61c67;
+        text-decoration: none;
+        &:hover {
+          background-color: rgb(216, 216, 216);
+        }
+      }
+
+      &:hover:after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.split {
+  display: flex;
+}
+
+.left {
+  flex: 2;
+  padding-right: 20px;
+}
+
+.right {
+  flex: 1;
+
+  & > div {
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.575);
+  }
+}
