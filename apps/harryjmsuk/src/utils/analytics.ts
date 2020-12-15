@@ -1,10 +1,6 @@
 import ReactGA from "react-ga";
 
-export const initGA = () => {
-  const {
-    env: { GOOGLE_ANALYTICS_ID },
-  } = process;
-
+export const initGA = (GOOGLE_ANALYTICS_ID: string) => {
   if (GOOGLE_ANALYTICS_ID) {
     console.log("GA init");
     ReactGA.initialize(GOOGLE_ANALYTICS_ID);

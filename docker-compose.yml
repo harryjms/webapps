@@ -1,10 +1,16 @@
 version: "3.3"
 services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx:/etc/nginx/conf.d:ro
+    ports:
+      - 80:80
+    depends_on:
+      - harryjmsuk
   harryjmsuk:
     build:
       context: ./apps/harryjmsuk
       dockerfile: Dockerfile
       args:
         - GOOGLE_ANALYTICS_ID=G-T33NZK85BY
-    ports:
-      - 3000:3000

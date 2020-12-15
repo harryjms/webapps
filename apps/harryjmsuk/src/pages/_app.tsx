@@ -8,8 +8,8 @@ import "../styles/styles.scss";
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initGA();
+    if (!window.GA_INITIALIZED && process.env.GOOGLE_ANALYTICS_ID) {
+      initGA(process.env.GOOGLE_ANALYTICS_ID);
       window.GA_INITIALIZED = true;
     }
   }, []);
