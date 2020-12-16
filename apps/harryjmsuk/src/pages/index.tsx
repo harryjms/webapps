@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import AnimatedHeader from "../components/AnimatedHeader";
 import styles from "../styles/home.module.scss";
 
 const Homepage = () => {
@@ -9,7 +10,9 @@ const Homepage = () => {
         <title>Harry Jarman</title>
       </Head>
       <div className="content intro">
-        <h1>Hello, I'm Harry.</h1>
+        <h1>
+          <AnimatedHeader>Hello, I'm Harry.</AnimatedHeader>
+        </h1>
         <p>
           Software Engineer, specialising in front-end development, at the BBC.
         </p>
@@ -28,7 +31,7 @@ const Homepage = () => {
         </div>
         <section>
           <div className={styles.tuckshop}>
-            <div className="content">
+            <div className="content no-pad">
               <div className={styles.split}>
                 <div className={styles.left}>
                   <h3>TuckShop</h3>
@@ -52,9 +55,7 @@ const Homepage = () => {
                     Visit TuckShop
                   </a>
                 </div>
-                <div className={styles.right}>
-                  <Image src="/images/tuckshop.png" width={500} height={481} />
-                </div>
+                <div className={styles.right} />
               </div>
             </div>
           </div>

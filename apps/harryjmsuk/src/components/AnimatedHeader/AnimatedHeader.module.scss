@@ -1,0 +1,17 @@
+.wrapper {
+  .mask {
+    display: inline-block;
+    margin-right: 0.15em;
+    overflow-y: hidden;
+    .text {
+      transform: translateY(100%);
+      opacity: 0;
+      &.visible {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+      transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s,
+        opacity 0.8s;
+    }
+  }
+}

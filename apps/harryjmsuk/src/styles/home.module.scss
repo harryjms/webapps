@@ -1,10 +1,52 @@
 .section {
   margin-top: 50px;
 
-  .tuckshop {
-    background-color: #e61c67;
+  .split {
+    display: flex;
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+      flex-flow: column;
+    }
+  }
+
+  .left {
+    flex: 2;
+    padding-right: 20px;
     padding: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .right {
+    flex: 1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    margin-top: 0;
+    .left,
+    .right {
+      border-radius: 0;
+    }
+  }
+
+  .tuckshop {
     color: white;
+
+    .left,
+    .right {
+      background-color: #e61c67;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+      .right {
+        background-color: transparent;
+      }
+    }
 
     a {
       color: currentColor;
@@ -23,23 +65,5 @@
         opacity: 0;
       }
     }
-  }
-}
-
-.split {
-  display: flex;
-}
-
-.left {
-  flex: 2;
-  padding-right: 20px;
-}
-
-.right {
-  flex: 1;
-
-  & > div {
-    border-radius: 10px;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.575);
   }
 }
