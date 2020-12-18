@@ -9,7 +9,7 @@ const Homepage = () => {
       <Head>
         <title>Harry Jarman</title>
       </Head>
-      <div className="content intro">
+      <div className={`content ${styles.intro}`}>
         <h1>
           <AnimatedHeader>Hello, I'm Harry.</AnimatedHeader>
         </h1>
