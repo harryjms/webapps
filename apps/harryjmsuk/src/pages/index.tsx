@@ -31,7 +31,7 @@ const Homepage = () => {
         </div>
         <section>
           <div className={styles.tuckshop}>
-            <div className="content no-pad">
+            <div className={`content no-pad ${styles.project}`}>
               <div className={styles.split}>
                 <div className={styles.left}>
                   <h3>TuckShop</h3>
