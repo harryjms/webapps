@@ -1,0 +1,91 @@
+@import "../../styles/breakpoints";
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #292626;
+  color: white;
+}
+
+.menuIcon {
+  display: none;
+}
+
+.brand {
+  flex: 2;
+}
+
+.contact {
+  flex: 1;
+  text-align: right;
+}
+
+.image {
+  height: 600px;
+  background-image: url(/assets/images/chalet1.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.nav {
+  display: none;
+}
+
+@include phone {
+  .header {
+    // flex-flow: column;
+  }
+
+  .menuIcon {
+    display: block;
+    position: absolute;
+  }
+
+  .brand {
+    text-align: center;
+
+    .title {
+      font-size: 1.1em;
+    }
+
+    .tagline {
+      display: none;
+    }
+  }
+
+  .contact {
+    display: none;
+  }
+
+  .nav {
+    background-color: #292626;
+    color: white;
+    padding: 8px;
+
+    &.show {
+      display: block;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        padding: 8px;
+        text-align: center;
+        a {
+          color: inherit;
+          text-decoration: inherit;
+        }
+      }
+    }
+  }
+}
