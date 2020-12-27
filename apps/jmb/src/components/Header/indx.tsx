@@ -1,9 +1,10 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
+import ActiveLink from "../ActiveLink";
+import Link from "next/link";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -28,20 +29,32 @@ const Header = () => {
           />
         </div>
         <div className={styles.brand}>
-          <div className={styles.title}>Jarman Building Services</div>
+          <div className={styles.title}>
+            <Link href="/">Jarman Building Services</Link>
+          </div>
         </div>
-        <div className={styles.contact}>07931 344 504</div>
+        <div className={styles.contact}>
+          <small>Call Jim</small>
+          <br />
+          07931 344 504
+        </div>
       </header>
       <nav className={`${styles.nav} ${showMenu && styles.show}`}>
         <ul>
           <li>
-            <Link href="/">Home</Link>
+            <ActiveLink href="/" activeClassName={styles.active}>
+              Home
+            </ActiveLink>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <ActiveLink href="/about" activeClassName={styles.active}>
+              About
+            </ActiveLink>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <ActiveLink href="/contact" activeClassName={styles.active}>
+              Contact
+            </ActiveLink>
           </li>
         </ul>
       </nav>
