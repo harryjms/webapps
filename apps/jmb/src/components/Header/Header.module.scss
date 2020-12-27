@@ -4,8 +4,18 @@
   display: flex;
   align-items: center;
   padding: 16px;
-  background-color: #292626;
+  background: rgb(54, 48, 210);
+  background: linear-gradient(
+    156deg,
+    rgba(54, 48, 210, 1) 9%,
+    rgba(134, 70, 252, 1) 100%
+  );
+
   color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999999;
 }
 
 .menuIcon {
