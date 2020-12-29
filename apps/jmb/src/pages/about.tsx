@@ -1,11 +1,9 @@
-import Head from "next/head";
+import SiteHead from "../components/SiteHead";
 
 const About = () => {
   return (
     <div>
-      <Head>
-        <title>About - {process.env.SITE_TITLE}</title>
-      </Head>
+      <SiteHead title="About" />
       <h1>About</h1>
       <p>
         Based in Bexleyheath, Jarman Building Services does exactly what the

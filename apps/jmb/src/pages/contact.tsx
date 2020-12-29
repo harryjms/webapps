@@ -1,10 +1,8 @@
-import Head from "next/head";
+import SiteHead from "../components/SiteHead";
 const Contact = () => {
   return (
     <>
-      <Head>
-        <title>Contact - {process.env.SITE_TITLE}</title>
-      </Head>
+      <SiteHead title="Contact" />
       <h1>Contact</h1>
       Call Jim on 07931 344 504
     </>

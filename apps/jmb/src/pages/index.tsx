@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import styles from "../styles/Homepage.module.scss";
@@ -6,13 +5,12 @@ import styles from "../styles/Homepage.module.scss";
 import chalet1 from "../../public/assets/images/chalet1.jpg";
 import chalet2 from "../../public/assets/images/chalet2.jpg";
 import chalet3 from "../../public/assets/images/chalet3.jpg";
+import SiteHead from "../components/SiteHead";
 
 const Homepage = () => {
   return (
     <>
-      <Head>
-        <title>{process.env.SITE_TITLE} - Loft and Chalet Conversions</title>
-      </Head>
+      <SiteHead />
       <div>
         <h1>Welcome</h1>
         <div className={styles.slideshow}>
