@@ -17,7 +17,7 @@ services:
       - 443:443
     depends_on:
       - harryjmsuk
-      - jmb
+      - jbs
     restart: always
     command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
   harryjmsuk:
@@ -27,9 +27,9 @@ services:
       args:
         - GOOGLE_ANALYTICS_ID=G-T33NZK85BY
     restart: always
-  jmb:
+  jbs:
     build:
-      context: ./apps/jmb
+      context: ./apps/jbs
       dockerfile: Dockerfile
       args:
         - GOOGLE_ANALYTICS_ID=G-D353W29FP5
