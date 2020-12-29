@@ -1,4 +1,5 @@
 import { AppProps } from "next/app";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
@@ -21,6 +22,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Header />
       <main className="content">
         <Component {...pageProps} />
