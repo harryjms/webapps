@@ -7,7 +7,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <div>
       <Header />
-      <main>
+      <main className="content">
         <Component {...pageProps} />
       </main>
       <Footer />

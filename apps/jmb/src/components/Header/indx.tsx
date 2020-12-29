@@ -21,30 +21,32 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.brand}>
-          <div className={styles.title}>
-            <Link href="/">JBS Ltd.</Link>
+        <div className={`content ${styles.content}`}>
+          <div className={styles.brand}>
+            <div className={styles.title}>
+              <Link href="/">JBS Ltd.</Link>
+            </div>
           </div>
+          <nav className={`${styles.nav} ${showMenu && styles.show}`}>
+            <ul>
+              <li>
+                <ActiveLink href="/" activeClassName={styles.active}>
+                  Home
+                </ActiveLink>
+              </li>
+              <li>
+                <ActiveLink href="/about" activeClassName={styles.active}>
+                  About
+                </ActiveLink>
+              </li>
+              <li>
+                <ActiveLink href="/contact" activeClassName={styles.active}>
+                  Contact
+                </ActiveLink>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav className={`${styles.nav} ${showMenu && styles.show}`}>
-          <ul>
-            <li>
-              <ActiveLink href="/" activeClassName={styles.active}>
-                Home
-              </ActiveLink>
-            </li>
-            <li>
-              <ActiveLink href="/about" activeClassName={styles.active}>
-                About
-              </ActiveLink>
-            </li>
-            <li>
-              <ActiveLink href="/contact" activeClassName={styles.active}>
-                Contact
-              </ActiveLink>
-            </li>
-          </ul>
-        </nav>
       </header>
     </>
   );

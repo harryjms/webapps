@@ -3,6 +3,12 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
+  color: #313131;
+}
+
+.content {
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 main {
@@ -12,17 +18,17 @@ main {
 h1 {
   margin: 0;
   margin-bottom: 8px;
-  background: rgb(54, 48, 210);
-  background: linear-gradient(
-    156deg,
-    rgba(54, 48, 210, 1) 9%,
-    rgba(70, 165, 252, 1) 100%
-  );
+  // background: rgb(54, 48, 210);
+  // background: linear-gradient(
+  //   156deg,
+  //   rgba(54, 48, 210, 1) 9%,
+  //   rgba(70, 165, 252, 1) 100%
+  // );
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -moz-text-fill-color: transparent;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // background-clip: text;
+  // -moz-text-fill-color: transparent;
 }
 
 a {
