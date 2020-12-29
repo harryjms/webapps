@@ -3,6 +3,10 @@ import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import styles from "../styles/Homepage.module.scss";
 
+import chalet1 from "../../public/assets/images/chalet1.jpg";
+import chalet2 from "../../public/assets/images/chalet2.jpg";
+import chalet3 from "../../public/assets/images/chalet3.jpg";
+
 const Homepage = () => {
   return (
     <>
@@ -25,13 +29,13 @@ const Homepage = () => {
           >
             <Slider>
               <Slide index={0}>
-                <img src="/assets/images/chalet1.JPG" />
+                <img src={chalet1} />
               </Slide>
               <Slide index={1}>
-                <img src="/assets/images/chalet2.JPG" />
+                <img src={chalet2} />
               </Slide>
               <Slide index={3}>
-                <img src="/assets/images/chalet3.JPG" />
+                <img src={chalet3} />
               </Slide>
             </Slider>
           </CarouselProvider>
