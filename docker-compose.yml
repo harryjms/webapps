@@ -29,7 +29,7 @@ services:
     restart: always
   jbs:
     build:
-      context: ./apps/jbs
+      context: ./apps/jmb
       dockerfile: Dockerfile
       args:
         - GOOGLE_ANALYTICS_ID=G-D353W29FP5
