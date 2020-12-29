@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <Head>
-        <title>Jarman Building Services Ltd. - About</title>
+        <title>About - {process.env.SITE_TITLE}</title>
       </Head>
       <h1>About</h1>
       <p>

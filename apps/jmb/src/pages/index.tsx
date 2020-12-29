@@ -11,7 +11,7 @@ const Homepage = () => {
   return (
     <>
       <Head>
-        <title>Jarman Building Services Ltd.</title>
+        <title>{process.env.SITE_TITLE} - Loft and Chalet Conversions</title>
       </Head>
       <div>
         <h1>Welcome</h1>
