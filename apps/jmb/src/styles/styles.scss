@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&display=swap");
+@import "./breakpoints";
+
 @font-face {
   font-family: "Caslon Graphique";
   src: url("/assets/fonts/CaslonGraphique-Opti.otf");
@@ -40,4 +42,10 @@ h1 {
 a {
   color: inherit;
   text-decoration: inherit;
+}
+
+@include phone {
+  h1 {
+    font-size: 1.5em;
+  }
 }

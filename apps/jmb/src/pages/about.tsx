@@ -6,9 +6,8 @@ const About = () => {
       <SiteHead title="About" />
       <h1>About</h1>
       <p>
-        Based in Bexleyheath, Jarman Building Services does exactly what the
-        name suggests! We specialise in the chalet style of house found
-        throughout Bexley, Dartford, Bromley and Greenwich.
+        Based in Bexleyheath, Jarman Building Services specialises in the chalet
+        style of house found throughout Bexley, Dartford, Bromley and Greenwich.
       </p>
       <p>
         The chalet style of house throws up issues and problems not frequently
