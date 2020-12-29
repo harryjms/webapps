@@ -21,6 +21,6 @@ services:
     build:
       context: ./apps/jmb
       dockerfile: Dockerfile
-    args:
-      - GOOGLE_ANALYTICS_ID=G-D353W29FP5
+      args:
+        - GOOGLE_ANALYTICS_ID=G-D353W29FP5
     restart: always
