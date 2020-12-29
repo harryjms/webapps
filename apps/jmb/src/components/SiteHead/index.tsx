@@ -18,6 +18,10 @@ const SiteHead: React.FC<Props> = ({ title }) => {
       <title>{siteTitle}</title>
       <meta property="og:title" content={siteTitle} />
       <meta property="og:image" content={socialImage} />
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={siteTitle} />
+      <meta name="twitter:image" content={socialImage} />
     </Head>
   );
 };
