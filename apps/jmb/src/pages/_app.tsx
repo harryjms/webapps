@@ -24,6 +24,10 @@ const App = ({ Component, pageProps }: AppProps) => {
     <div>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Loft and Chalet conversions in the Bexley, Dartford, Bromley and Greenwich area."
+        />
       </Head>
       <Header />
       <main className="content">
