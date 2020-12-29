@@ -21,43 +21,31 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.menuIcon} onClick={handleToggleMenu}>
-          <FontAwesomeIcon
-            icon={faBars}
-            aria-label="Menu"
-            aria-hidden="false"
-          />
-        </div>
         <div className={styles.brand}>
           <div className={styles.title}>
-            <Link href="/">Jarman Building Services</Link>
+            <Link href="/">JBS Ltd.</Link>
           </div>
         </div>
-        <div className={styles.contact}>
-          <small>Call Jim</small>
-          <br />
-          07931 344 504
-        </div>
+        <nav className={`${styles.nav} ${showMenu && styles.show}`}>
+          <ul>
+            <li>
+              <ActiveLink href="/" activeClassName={styles.active}>
+                Home
+              </ActiveLink>
+            </li>
+            <li>
+              <ActiveLink href="/about" activeClassName={styles.active}>
+                About
+              </ActiveLink>
+            </li>
+            <li>
+              <ActiveLink href="/contact" activeClassName={styles.active}>
+                Contact
+              </ActiveLink>
+            </li>
+          </ul>
+        </nav>
       </header>
-      <nav className={`${styles.nav} ${showMenu && styles.show}`}>
-        <ul>
-          <li>
-            <ActiveLink href="/" activeClassName={styles.active}>
-              Home
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink href="/about" activeClassName={styles.active}>
-              About
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink href="/contact" activeClassName={styles.active}>
-              Contact
-            </ActiveLink>
-          </li>
-        </ul>
-      </nav>
     </>
   );
 };

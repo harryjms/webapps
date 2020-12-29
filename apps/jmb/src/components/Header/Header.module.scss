@@ -45,21 +45,60 @@
 }
 
 .nav {
-  display: none;
+  // display: none;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    li {
+      flex: 1;
+      text-align: center;
+      margin: 8px;
+      position: relative;
+
+      a {
+        &:after {
+          content: " ";
+          position: absolute;
+          bottom: -1px;
+          height: 2px;
+          left: 50%;
+          right: 50%;
+          background-color: white;
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+          &:after {
+            opacity: 1;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+      .active {
+        a {
+          &:after {
+            left: 0;
+            right: 0;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include phone {
-  .header {
-    // flex-flow: column;
-  }
-
   .menuIcon {
     display: block;
     position: absolute;
   }
 
   .brand {
-    text-align: center;
+    // text-align: center;
 
     .title {
       font-size: 1.1em;
@@ -72,36 +111,5 @@
 
   .contact {
     display: none;
-  }
-
-  .nav {
-    background-color: #292626;
-    color: white;
-    padding: 8px;
-
-    &.show {
-      display: block;
-    }
-
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-
-      li {
-        padding: 8px;
-        text-align: center;
-        a {
-          color: inherit;
-          text-decoration: inherit;
-        }
-
-        .active {
-          a {
-            font-weight: bold;
-          }
-        }
-      }
-    }
   }
 }
