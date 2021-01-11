@@ -10,6 +10,7 @@ import {
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import validateEmail from "../utils/validateEmail";
 
 const Contact = () => {
   const [sending, setSending] = useState(0);
@@ -45,7 +46,11 @@ const Contact = () => {
       if (!fieldEmail) {
         addError("email", "Email is required");
       } else {
-        removeError("email");
+        if (!validateEmail(fieldEmail)) {
+          addError("email", "Email address doesn't appear to be valid");
+        } else {
+          removeError("email");
+        }
       }
 
       if (!fieldMessage) {
