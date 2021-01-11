@@ -27,7 +27,7 @@ class MyDocument extends Document {
             __html: `{
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "JBS Ltd.",
+            "name": "Jarman Building Services Ltd.",
             "image": "https://jbs-ltd.uk${logo}",
             "@id": "",
             "url": "https://jbs-ltd.uk",
