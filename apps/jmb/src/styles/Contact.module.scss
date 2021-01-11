@@ -1,5 +1,67 @@
+@import "./breakpoints";
+
 .form {
   display: flex;
   flex-flow: column;
   max-width: 400px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @include phone {
+    flex-flow: column;
+  }
+}
+
+.contactForm {
+  flex: 2;
+}
+
+.contactInfo {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  text-align: right;
+
+  div {
+    margin: 8px 0;
+    .icon {
+      margin-bottom: 4px;
+    }
+
+    span {
+      margin-top: 4px;
+      display: block;
+    }
+  }
+
+  .telNoLink {
+    display: block;
+  }
+
+  .telLink {
+    display: none;
+  }
+
+  @include phone {
+    text-align: center;
+    margin-bottom: 32px;
+    flex-flow: row;
+
+    .telNoLink {
+      display: none;
+    }
+
+    .telLink {
+      display: block;
+    }
+
+    div {
+      flex: 1;
+
+      text-align: center;
+    }
+  }
 }
