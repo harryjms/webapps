@@ -34,11 +34,15 @@ services:
       args:
         - GOOGLE_ANALYTICS_ID=G-D353W29FP5
     restart: always
+    environment:
+      IS_DOCKER: true,
+      EMAIL_SERVER: ${EMAIL_SERVER}
+      EMAIL_USERNAME: ${EMAIL_USERNAME}
+      EMAIL_PASSWORD: ${EMAIL_PASSWORD}
+      EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT}
+      EMAIL_SMTP_SECURE: ${EMAIL_SMTP_SECURE}
+    ports:
+      - 3000:3000
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-  jbs-api:
-    build:
-      context: ./apps/jbs-api
-      dockerfile: Dockerfile
-    restart: always

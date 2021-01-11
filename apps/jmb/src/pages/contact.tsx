@@ -4,6 +4,8 @@ import { useState } from "react";
 import styles from "../styles/Contact.module.scss";
 import TextInput from "../components/TextInput";
 import Button from "../components/Button";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Contact = () => {
   const [sending, setSending] = useState(0);
@@ -49,9 +51,15 @@ const Contact = () => {
       }
     } else {
       setSending(1);
+      await axios.post("/api/contact", {
+        name: fieldName,
+        email: fieldEmail,
+        message: fieldMessage,
+      });
+      setSending(2);
       try {
       } catch (err) {
-        setSending(2);
+        setSending(3);
         console.error(err);
       }
     }
@@ -63,41 +71,57 @@ const Contact = () => {
     <>
       <SiteHead title="Contact" />
       <h1>Contact</h1>
-      <div className={styles.form}>
-        <div className={styles.row}>
-          <TextInput
-            name="name"
-            label="Name"
-            value={fieldName}
-            onChange={(e, v) => setFieldName(v)}
-            disabled={disableForm}
-            error={errors["name"]}
-            required
-          />
-          <TextInput
-            name="email"
-            label="E-mail address"
-            value={fieldEmail}
-            onChange={(e, v) => setFieldEmail(v)}
-            disabled={disableForm}
-            error={errors["email"]}
-            required
-          />
-          <TextInput
-            name="message"
-            label="Message"
-            rows={7}
-            value={fieldMessage}
-            onChange={(e, v) => setFieldMessage(v)}
-            disabled={disableForm}
-            error={errors["message"]}
-            required
-          />
-          <Button onClick={handleSend} disabled={disableForm}>
-            Send
-          </Button>
+      {sending === 2 ? (
+        <p>Your email has been sent.</p>
+      ) : (
+        <div className={styles.form}>
+          <div className={styles.row}>
+            <TextInput
+              name="name"
+              label="Name"
+              value={fieldName}
+              onChange={(e, v) => setFieldName(v)}
+              disabled={disableForm}
+              error={errors["name"]}
+              required
+            />
+            <TextInput
+              name="email"
+              label="E-mail address"
+              value={fieldEmail}
+              onChange={(e, v) => setFieldEmail(v)}
+              disabled={disableForm}
+              error={errors["email"]}
+              required
+            />
+            <TextInput
+              name="message"
+              label="Message"
+              rows={7}
+              value={fieldMessage}
+              onChange={(e, v) => setFieldMessage(v)}
+              disabled={disableForm}
+              error={errors["message"]}
+              required
+            />
+
+            {sending === 1 ? (
+              <>
+                <FontAwesomeIcon
+                  icon={faSpinner}
+                  spin
+                  style={{ margin: "0 4px 0 8px" }}
+                />
+                Please wait while your email is sent...
+              </>
+            ) : (
+              <Button onClick={handleSend} disabled={disableForm}>
+                Send
+              </Button>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
