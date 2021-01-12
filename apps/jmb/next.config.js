@@ -10,7 +10,7 @@ module.exports = withImages({
     ...process.env,
   },
   env: {
-    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    GOOGLE_ANALYTICS_ID: process.env.JBS_GOOGLE_ANALYTICS_ID,
     SITE_TITLE: "Jarman Building Services Ltd.",
   },
 });

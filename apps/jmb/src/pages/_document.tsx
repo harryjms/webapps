@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import logo from "../../public/assets/images/socialx300.png";
+import { GA_TRACKING_ID } from "../utils/gtag";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -16,7 +17,24 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+          `,
+            }}
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

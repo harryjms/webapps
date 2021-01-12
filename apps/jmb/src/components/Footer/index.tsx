@@ -1,8 +1,17 @@
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as gtag from "../../utils/gtag";
 import styles from "./Footer.module.scss";
-
 const Footer = () => {
+  const handleSocialLink = (site: "facebook" | "instagram") => {
+    gtag.event({
+      action: "external_link",
+      category: "social_profile",
+      label: site,
+      value: 1,
+    });
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={`content ${styles.wrapper}`}>
@@ -14,6 +23,7 @@ const Footer = () => {
         <div className={styles.right}>
           <a
             href="https://www.facebook.com/Jarman-Building-Services-106944797972553"
+            onClick={() => handleSocialLink("facebook")}
             target="_blank"
             title="Facebook"
           >
@@ -25,6 +35,7 @@ const Footer = () => {
           </a>
           <a
             href="https://www.instagram.com/jbs_bexleyheath/"
+            onClick={() => handleSocialLink("instagram")}
             target="_blank"
             title="Instagram"
           >
