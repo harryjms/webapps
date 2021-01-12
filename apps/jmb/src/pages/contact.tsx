@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import validateEmail from "../utils/validateEmail";
+import * as gtag from "../utils/gtag";
 
 const Contact = () => {
   const [sending, setSending] = useState(0);
@@ -65,10 +66,13 @@ const Contact = () => {
         email: fieldEmail,
         message: fieldMessage,
       });
+
+      window.gtag("event", "contact_form_submission");
       setSending(2);
       try {
       } catch (err) {
         setSending(3);
+        window.gtag("event", "contact_form_failure");
         console.error(err);
       }
     }
